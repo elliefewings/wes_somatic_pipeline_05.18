@@ -1,0 +1,65 @@
+Job description file for somatic variant calling
+Ellie Fewings, 26Oct17
+
+TEMPLATE v1
+
+=========== Data location and analysis settings =============
+
+Data server: admin@mgqnap2.medschl.cam.ac.uk
+Data location: /share/eleanor/gastric_Aug16
+
+Project location: /share/CACHEDEV1_DATA/Eleanor/internal
+
+Project: gastric
+Library: library1
+Tumour normal file: /rds/project/erf33/rds-erf33-medgen/tnfile.txt
+
+#Script requires tumour normal file on hpc in the format "sample_name tumour_bam_file normal_bam_file", no file paths are required. This file should have no header.
+
+
+======================= HPC settings ========================
+
+working_folder: /rds/project/erf33/rds-erf33-medgen/
+
+Account to use on HPC: TISCHKOWITZ-SL2-CPU
+Max time requested for copying source files (hrs.min.sec): 02.00.00
+Max time requested for variant calling (hrs.min.sec): 12.00.00
+Max time requested for moving results out of HPC (hrs.min.sec): 05.00.00
+
+==================== Pipeline summary =======================
+
+#Somatic variant calling per chromosome per sample
+
+===================== Standard settings =====================
+
+scripts_folder: /rds/project/erf33/rds-erf33-medgen/scripts/wes_somatic_pipeline_05.18/p04_wes_somatic_variant_calling
+start_script: a00_start_pipeline.sh
+
+maxAltAlleles: 6
+stand_emit_conf: 30.0
+stand_call_conf: 30.0
+
+Tools
+-----
+
+tools_folder: /rds/project/erf33/rds-erf33-medgen/tools
+java: java/jre1.8.0_40/bin/java
+gatk: gatk/gatk-3.6-0/GenomeAnalysisTK.jar
+samtools: samtools/samtools-1.3.1/bin/samtools
+bcftools: bcftools/bcftools-1.3.1/bin/bcftools
+
+Resources
+---------
+
+resources_folder: /rds/project/erf33/rds-erf33-medgen/resources/
+
+ref_genome: gatk_bundle/b37/decompressed/human_g1k_v37.fasta
+
+targets_intervals: illumina_nextera/nexterarapidcapture_exome_targetedregions_v1.2.b37.intervals
+
+
+Working sub-folders
+-------------------
+
+logs_folder: f00_logs
+vcf_folder: f01_vcfs

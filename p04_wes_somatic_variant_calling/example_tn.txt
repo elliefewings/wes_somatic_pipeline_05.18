@@ -1,0 +1,4 @@
+IHCAP75_BM  IHCAP_75_BM_idr_bqr.bam  IHCAP_75_1A_idr_bqr.bam
+IHCAP75_1F  IHCAP_75_1F_idr_bqr.bam  IHCAP_75_1A_idr_bqr.bam
+IHCAP75_T1  IHCAP_75_T1_idr_bqr.bam  IHCAP_75_1A_idr_bqr.bam
+IHCAP75_T2  IHCAP_75_T2_idr_bqr.bam  IHCAP_75_1A_idr_bqr.bam
